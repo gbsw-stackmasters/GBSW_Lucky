@@ -1,0 +1,20 @@
+#input::placeholder {
+  color: white;
+}
+
+.button {
+  background: #3E98FF;
+  border: 1px solid #3E98FF;
+  border-radius: 6px;
+  width: 400px;
+  height: 50px;
+  margin: 2px;
+  color: #fcfcfcef;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #3E70FF;
+}
