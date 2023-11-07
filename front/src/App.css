@@ -60,3 +60,7 @@ nav {
   text-decoration-color: rgb(66, 64, 64);
   text-decoration-thickness: 3px;
 }
+
+.error-message {
+  color: white;
+}

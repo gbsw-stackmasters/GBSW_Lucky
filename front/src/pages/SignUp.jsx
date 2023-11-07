@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import GBSW from '../images/gbsw.jpg';
-import Back from '../images/sonoma2.jpg'
+import Back from '../images/sonoma2.jpg';
 import '../CSS/Sign.css';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
   const containerStyle = {
@@ -31,19 +32,24 @@ function SignUp() {
 
   const border = {
     background: `url(${Back})`,
-    padding: "35px",
-    width: "700px",
-    height: "530px",
-    borderRadius: "60px",
-    backdropFilter: "blur(90px)",
-    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)"
+    padding: '35px',
+    width: '700px',
+    height: '530px',
+    borderRadius: '60px',
+    backdropFilter: 'blur(90px)',
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)',
   };
 
   const [formData, setFormData] = useState({
-    username: '',  // 사용자 이름
-    email: '', // 사용자 이메일
-    password: '', // 사용자 비밀번호
+    name: '',
+    email: '',
+    password: '',
   });
+
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const navigate = useNavigate();
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -58,9 +64,19 @@ function SignUp() {
 
     try {
       const response = await axios.post('http://localhost:3090/api/sign/up', formData);
-      console.log('회원가입 요청 성공:', response.data);
+      if (response.data.status === 200) {
+        console.log(response.data);
+        setSuccessMessage('회원가입에 성공하였습니다.');
+        setErrorMessage('');
+        navigate('/');
+      } else {
+        setSuccessMessage('');
+        setErrorMessage('동일한 아이디의 사용자가 이미 존재합니다.');
+      }
     } catch (error) {
       console.error('회원가입 요청 실패:', error);
+      setSuccessMessage('');
+      setErrorMessage('동일한 아이디의 사용자가 이미 존재합니다.');
     }
   };
 
@@ -68,11 +84,13 @@ function SignUp() {
     <div style={containerStyle}>
       <div style={border}>
         <h1 style={{ color: 'white', fontSize: '40px' }}>회원가입</h1>
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             id="input"
-            name="name" // 스키마와 일치하도록 name 변경
+            name="name"
             placeholder="아이디"
             style={inputStyle}
             value={formData.name}
@@ -106,8 +124,8 @@ function SignUp() {
           <input type="submit" value="회원가입" className="button" />
           <br />
           <br />
-          <p style={{marginTop: "2px", marginBottom: "10px", color: "white"}}>
-            계정이 있으신가요? <b><a style={{textDecoration: "none", color: "white"}} href="./s_in"> 로그인</a></b>
+          <p style={{ marginTop: '2px', marginBottom: '10px', color: 'white' }}>
+            계정이 있으신가요? <b><a style={{ textDecoration: 'none', color: 'white' }} href="./s_in">로그인</a></b>
           </p>
           <img src={GBSW} alt="logo" style={{ width: '60px' }} />
         </form>

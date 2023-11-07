@@ -10,6 +10,7 @@
 }
 
 #btn:hover {
+  cursor: pointer;
   background: #3E70FF;
   border: none;
 }
@@ -36,16 +37,19 @@
 }
 
 .pf1>img {
+  border: 4px solid lightgray;
   max-width: 320px;
   margin: 20px;
 }
 
 .pf2>img {
+  border: 4px solid lightgray;
   max-width: 320px;
   margin: 20px;
 }
 
 .pf3>img {
+  border: 4px solid lightgray;
   max-width: 320px;
   margin: 20px;
 }
@@ -71,5 +75,18 @@
   height: 30px;
 }
 
+.lgf {
+  transition: transform 0.3s ease;
+}
 
+.lgf:hover {
+  transform: scale(1.1);
+}
 
+.lgb {
+  transition: transform 0.3s ease;
+}
+
+.lgb:hover {
+  transform: scale(1.1);
+}

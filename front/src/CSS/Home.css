@@ -12,6 +12,8 @@
 
 body {
   background-image: url('../images/sonoma2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #header {
