@@ -74,14 +74,14 @@ function Profile() {
       <br />
       <br />
       <br />
-      <div>
+      <div id="sb">
         <h2 style={h2}>사용한 기술 스택</h2>
         <h3 style={h3}>Frontend</h3>
-        <img style={lgf} src={RR} alt=""/>
-        <img style={lgf} src={AX} alt=""/>
+        <img className="lgf" style={lgf} src={RR} alt=""/>
+        <img className="lgf" style={lgf} src={AX} alt=""/>
         <h3 style={h3}>Backend</h3>
-        <img style={lgb} src={NR} alt=""/>
-        <img style={lgb} src={MG} alt=""/>
+        <img className="lgb" style={lgb} src={NR} alt=""/>
+        <img className="lgb" style={lgb} src={MG} alt=""/>
       </div>
       <br />
       <br />

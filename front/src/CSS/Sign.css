@@ -16,5 +16,6 @@
 }
 
 .button:hover {
+  cursor: pointer;
   background: #3E70FF;
 }
