@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import '../CSS/Match.css';
+import React, { useState, useEffect } from "react";
+import "../CSS/Match.css";
 
 const border = {
   backgroundColor: "white",
@@ -12,17 +12,17 @@ const border = {
   backgroundSize: "cover",
   backdropFilter: "blur(60px)",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.9)",
-}
+};
 
 const bt = {
   marginTop: "460px",
-}
+};
 
 const bt2 = {
   marginTop: "200px",
   width: "320px",
-  height: "50px"
-}
+  height: "50px",
+};
 
 function Match() {
   const getCurrentDate = () => {
@@ -30,31 +30,42 @@ function Match() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1;
     const day = currentDate.getDate();
-    return `${year}년 ${month}월 ${day}일`;
-  }
+    return `< ${year}년 ${month}월 ${day}일 >`;
+  };
 
   const fortunes = [
-    { content: '운세 내용1' },
-    { content: '운세 내용2' },
-    { content: '운세 내용3' },
-    { content: '운세 내용4' },
-    { content: '운세 내용5' },
-    { content: '운세 내용6' },
-    { content: '운세 내용7' },
-    { content: '운세 내용8' },
-    { content: '운세 내용9' },
-    { content: '운세 내용10' },
-    { content: '운세 내용11' },
-    { content: '운세 내용12' },
-    { content: '운세 내용13' },
-    { content: '운세 내용14' },
-    { content: '운세 내용15' },
-    { content: '운세 내용16' },
-    { content: '운세 내용17' },
-    { content: '운세 내용18' },
-    { content: '운세 내용19' },
-    { content: '운세 내용20' },
-    { content: '운세 내용21' },
+    { content: "기숙사에서 라면을 먹지 마세요." },
+    { content: "길을 걷다가 김신우를 만나지 마세요." },
+    {
+      content: "충분한 수면을 취하세요. 충분한 수면은 키 성장에 도움이 됩니다.",
+    },
+    { content: "아침을 드세요. 아침 섭취는 두뇌회전에 도움을 줍니다." },
+    { content: "안경을 쓰지 마세요." },
+    { content: "기숙사 밖을 나가지 마세요." },
+    { content: "주변인들을 믿으세요." },
+    { content: "선생님들의 말씀을 잘 따르세요." },
+    { content: "수업시간에 자지 마세요." },
+    { content: "연인을 사귀세요." },
+    { content: "연인을 사귀지 마세요." },
+    { content: "지나친 카페인은 몸에 독이 됩니다. 카페인을 줄이세요" },
+    {
+      content:
+        "만약 당신이 스트레스를 받고 있다면 오늘 하루는 아무생각 없이 놀아보세요.",
+    },
+    { content: "過猶不及 (과유불급) 이란 말이 있습니다. 무엇이든 적당히..." },
+    {
+      content:
+        "轉禍爲福 (전화위복) 이란 말이 있습니다. 노력한다면 불행을 행복으로 바꿀 수 있습니다. 위기라면 끝 없이 노력하세요.",
+    },
+    { content: "뭉치면 어떤 위기라도 해쳐 나갈 수 있을 것 입니다." },
+    { content: "빚이 있다면 어서 갚으세요." },
+    { content: "취업만이 답이 아닙니다." },
+    { content: "자신의 장점을 살리세요. 모든 사람은 장점이 있습니다." },
+    { content: "지금 잠시동안 힘들더라도 포기하지마세요." },
+    {
+      content:
+        "벼는 익을수록 고개를 숙인다 라는 말이 있습니다. 기고만장 해지지 마세요.",
+    },
   ];
 
   const [currentFortuneIndex, setCurrentFortuneIndex] = useState(0);
@@ -67,7 +78,7 @@ function Match() {
     }, 1000);
 
     return () => {
-      clearInterval(intervalId); 
+      clearInterval(intervalId);
     };
   }, []);
 
@@ -75,11 +86,11 @@ function Match() {
     const randomIndex = Math.floor(Math.random() * fortunes.length);
     setCurrentFortuneIndex(randomIndex);
     setShowFortune(true);
-  }
+  };
 
   const handleGoBack = () => {
     setShowFortune(false);
-  }
+  };
 
   const currentFortune = fortunes[currentFortuneIndex];
 
