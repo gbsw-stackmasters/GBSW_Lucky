@@ -66,8 +66,7 @@ function SignUp() {
       const response = await axios.post('http://localhost:3090/api/sign/up', formData);
       if (response.data.status === 200) {
         console.log(response.data);
-        setSuccessMessage('회원가입에 성공하였습니다.');
-        setErrorMessage('');
+        alert('회원가입에 성공하였습니다.')
         navigate('/');
       } else {
         setSuccessMessage('');

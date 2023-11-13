@@ -27,6 +27,7 @@ h2 {
   color: white;
   font-style: italic;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
 }
 
 #btn2:hover {
@@ -39,7 +40,7 @@ h2 {
   margin: auto;
   width: 800px;
   height: 500px;
-  font-size: 50px;
+  font-size: 1.8rem;
   text-align: center;
 }
 
